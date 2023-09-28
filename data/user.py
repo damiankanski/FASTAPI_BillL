@@ -1,5 +1,5 @@
 from model.user import User
-from __init__ import conn, curs, get_db, IntegrityError
+from data.__init__ import curs, IntegrityError
 from errors import Missing, Duplicate
 
 curs.execute("""create table if not exists
@@ -33,7 +33,7 @@ def get_all() -> list[User]:
     curs.execute(qry)
     return [row_to_model(row) for row in curs.fetchall()]
 
-def create(user: User, table: str = "user" | "xuser"="user"):
+def create(user: User, table: "user" or "xuser"="user") :
     """Add <user> to user or xuser table"""
     qry = f"""insert into {table}
         (name, hash)

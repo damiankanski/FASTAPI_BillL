@@ -1,11 +1,11 @@
 import os
 import pytest
-from ....model.creature import Creature
-from ....error import Missing, Duplicate
+from  model.creature import Creature
+from  errors import Missing, Duplicate
 
 # Set this before data.init import below
 os.environ["CRYPTID_SQLITE_DB"] = ":memory:"
-from ...data import init, creature
+from data import __init__, creature
 
 @pytest.fixture
 def sample() -> Creature:

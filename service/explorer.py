@@ -8,13 +8,13 @@ def get_one(name: str) -> Explorer | None:
     return data.get(name)
 
 def create(explorer: Explorer) -> Explorer:
-    return data.create(creature)
+    return data.create(explorer)
 
 def replace(id, explorer: Explorer) -> Explorer:
-    return data.replace(id, creature)
+    return data.replace(id, explorer)
 
 def modify(id, explorer: Explorer) -> Explorer:
-    return data.modify(id, creature)
+    return data.modify(id, explorer)
 
 def delete(id, explorer: Explorer) -> bool:
     return data.delete(id)
